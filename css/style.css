@@ -726,11 +726,17 @@ input[type="radio"]:checked
 }
 
 .coffee-cup {
+
+    width: 620px;
+    height: 360px;
+    border-radius: 10px;
+}
+.image {
     grid-row-start: 2;
     grid-row-end: 5;
     grid-column-start: 2;
     grid-column-end: 5;
-    width: 620px;
-    height: 360px;
-    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
