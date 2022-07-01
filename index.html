@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="menu">
+            Menu
+            <form>
+                <label for="roast-selection"></label>
+                <select id="roast-selection">
+                    <option>light</option>
+                    <option>medium</option>
+                    <option>dark</option>
+                </select>
+                <input id="submit" type="submit" />
+            </form>
+            <!-- steaming coffee cup -->
+            <div id="container">
+                <div class="steam" id="steam1"> </div>
+                <div class="steam" id="steam2"> </div>
+                <div class="steam" id="steam3"> </div>
+                <div class="steam" id="steam4"> </div>
+
+                <div id="cup">
+                    <div id="cup-body">
+                        <div id="cup-shade"></div>
+                    </div>
+                    <div id="cup-handle"></div>
+                </div>
+
+                <div id="saucer"></div>
+
+                <div id="shadow"></div>
+            </div>
+        </div>
+        <div class="header">
+            <div class="nav">
+                <img id="Logo" src="img/CoffeeLogo.png" alt="">
+                <div class="nav-header">
+                    <div class="nav-title">
+                        <h1>Heart Coffee</h1>
+                    </div>
+                </div>
+                <div class="nav-btn">
+                    <label>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </div>
+                <div class="nav-links">
+                    <a href="" target="_blank">Our Coffee</a>
+                    <a href="" target="_blank">About Us</a>
+                    <a href="" target="_blank">Shop</a>
+                    <a href="" target="_blank">Gift Cards</a>
+                    <a href="" target="_blank">Perks</a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            Main
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>ROAST</th>
+                </tr>
+                </thead>
+                <tbody id="coffees"></tbody>
+            </table>
+        </div>
+        <div class="footer">
+            Footer
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
