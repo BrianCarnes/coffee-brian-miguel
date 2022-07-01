@@ -57,10 +57,6 @@ table {
 .main {
     grid-area: main;
     border: red 1px solid;
-    background-image: url(../img/TokyoGhoulCoffee.gif);
-    background-size: initial;
-    background-repeat: no-repeat;
-    background-position: center;
     z-index: 3;
 }
 .footer {
@@ -709,30 +705,32 @@ input[type="radio"]:checked
 
 
 .grid-container2 {
-
+    grid-auto-flow: row dense;
     display: grid;
     grid-template-columns: 18% 18% 18% 18% 18%;
+    grid-template-rows: auto auto auto auto auto;
     background-color: #2196F3;
+    justify-content: space-around;
     grid-gap: 3px;
     padding: 10px;
-    height: calc(100% - 23px);
-    z-index: 2;
-    align-items: center;
-
+    width: 98%;
+    height: 98%;
 }
 .cards {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 20px;
     font-size: 30px;
-    text-align: center;
-    border: 1px solid blue;
     height: 60px;
     border-radius: 5px;
 }
 
 .coffee-cup {
-    display: block;
-    align-items: center;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    width: 620px;
+    height: 360px;
     border-radius: 10px;
 }
