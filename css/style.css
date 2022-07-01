@@ -30,6 +30,7 @@ body {
     background-blend-mode: hard-light;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    height: 99vh;
 }
 
 h1 {
@@ -51,7 +52,6 @@ table {
 }
 .menu {
     grid-area: menu;
-    height: 96%;
     border: red 1px solid;
 }
 .main {
@@ -77,9 +77,10 @@ table {
     width: 95%;
     background-color: #e0c8a0;
     justify-content: space-between;
+    align-items: center;
     position: relative;
     border-radius: 5px;
-    align-items: center;
+    margin-top: 15px;
 }
 
 .nav-title{
@@ -122,18 +123,14 @@ table {
 .grid-container {
     display: grid;
     grid-template-areas:
-    'menu menu menu header header header'
-    'menu menu menu main main main'
-    'menu menu menu footer footer footer';
+    'menu header'
+    'menu main'
+    'menu footer';
     gap: 10px;
     padding: 10px;
+    grid-template-rows: 100px 80% 100px;
 }
 
-.grid-container > div {
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
-}
 
 /* select menu */
 
@@ -188,7 +185,7 @@ table {
 #options-view-button {
     position: absolute;
     top: 10%;
-    left: 5%;
+    left: 3%;
     width: 200px;
     height: 42px;
     margin: 0;
@@ -198,6 +195,8 @@ table {
 }
 
 #selected-value {
+    display: flex;
+    justify-content: center;
     font-size: 16px;
     line-height: 1;
     margin-right: 26px;
@@ -242,9 +241,9 @@ table {
 }
 
 #options {
-    position: relative;
-    top: 15%;
-    left: 5%;
+    position: absolute;
+    top: 11%;
+    left: 3%;
     width: 230px;
     margin-top: 42px;
     background-color: #fff;
