@@ -1,18 +1,21 @@
 "use strict"
+const divBody = document.querySelector('#coffees');
+const submitButton = document.querySelector('#submit-button');
+const roastSelection = document.querySelectorAll('.bottom').forEach(e => e.addEventListener('click', '.value'));
+console.log(roastSelection);
 
 function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
+    let html = '<div class="cards">';
+    html += '<h6>' + coffee.name + '</h6>';
+    html += '<p>' + coffee.roast + '</p>';
+    html += '</div>';
 
     return html;
 }
 
 function renderCoffees(coffees) {
-    var html = '';
-    for(var i = coffees.length - 1; i >= 0; i--) {
+    let html = '';
+    for(let i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
     }
     return html;
@@ -20,37 +23,34 @@ function renderCoffees(coffees) {
 
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
-    var selectedRoast = roastSelection.value;
-    var filteredCoffees = [];
+    let selectedRoast = roastSelection.value;
+    console.log(selectedRoast)
+    let filteredCoffees = [];
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
         }
     });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
+    divBody.innerHTML = renderCoffees(filteredCoffees);
 }
 
-var coffees = [
+let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
     {id: 3, name: 'Cinnamon', roast: 'light'},
-    {id: 4, name: 'City', roast: 'medium'},
-    {id: 5, name: 'American', roast: 'medium'},
-    {id: 6, name: 'Breakfast', roast: 'medium'},
-    {id: 7, name: 'High', roast: 'dark'},
-    {id: 8, name: 'Continental', roast: 'dark'},
-    {id: 9, name: 'New Orleans', roast: 'dark'},
-    {id: 10, name: 'European', roast: 'dark'},
-    {id: 11, name: 'Espresso', roast: 'dark'},
-    {id: 12, name: 'Viennese', roast: 'dark'},
-    {id: 13, name: 'Italian', roast: 'dark'},
-    {id: 14, name: 'French', roast: 'dark'},
+    {id: 4, name: 'City', roast: 'house'},
+    {id: 5, name: 'American', roast: 'house'},
+    {id: 6, name: 'Breakfast', roast: 'house'},
+    {id: 7, name: 'High', roast: 'bold'},
+    {id: 8, name: 'Continental', roast: 'bold'},
+    {id: 9, name: 'New Orleans', roast: 'bold'},
+    {id: 10, name: 'European', roast: 'bold'},
+    {id: 11, name: 'Espresso', roast: 'bold'},
+    {id: 12, name: 'Viennese', roast: 'bold'},
+    {id: 13, name: 'Italian', roast: 'bold'},
+    {id: 14, name: 'French', roast: 'bold'},
 ];
 
-const tbody = document.querySelector('#coffees');
-const submitButton = document.querySelector('#submit');
-const roastSelection = document.querySelector('#roast-selection');
-
-tbody.innerHTML = renderCoffees(coffees);
+divBody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
