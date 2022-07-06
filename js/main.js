@@ -35,10 +35,6 @@ searchQuery.addEventListener('keyup', function(e){
     divBody.innerHTML = renderCoffees(matchingCoffees)
 })
 
-// searchQuery.addEventListener("input", function(event){
-//     let searchString = this.value;
-//
-// })
 
 roastSelect();
 console.log(roastSelection);
