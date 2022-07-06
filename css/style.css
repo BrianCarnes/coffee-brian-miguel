@@ -118,10 +118,33 @@ p {
     padding: 13px 10px 13px 10px;
     text-decoration: none;
     color: #4c2c13;
+    transition: .5s;
+}
+
+.nav > .nav-links > a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #3cbfd9;
+    transition: .5s;
+    transform: scale(.9);
+    z-index: -1;
+}
+
+.nav > .nav-links > a:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #3cbfd9;
 }
 
 .nav > .nav-links > a:hover {
     background-color: rgba(0, 0, 0, 0.2);
+    color: #3cbfd9;
+    box-shadow: 0 0 5px #3cbfd9;
+    text-shadow: 0 0 5px #3cbfd9;
 }
 
 .nav > #nav-check {
@@ -153,8 +176,30 @@ details[open] {
     z-index: 1;
 }
 
-summary {
+HEAD summary {
     padding: 1rem;
+}
+#select-button {
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    width: 200px;
+    height: 16px;
+    padding: 12px 14px;
+    background-color: #e0c8a0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+#options-view-button {
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    width: 200px;
+    height: 42px;
+    margin: 0;
+    opacity: 0;
     cursor: pointer;
     border-radius: 5px;
     background-color: #e0c8a0;
