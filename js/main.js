@@ -1,7 +1,46 @@
 "use strict"
 const divBody = document.querySelector('#coffees');
 const submitButton = document.querySelector('#submit-button');
-const roastSelection = document.querySelectorAll('.bottom').forEach(e => e.addEventListener('click', '.value'));
+
+let roastSelection = document.querySelector('#roast-selection');
+
+function roastSelect () {
+    roastSelection.addEventListener("change", function(event){
+        let roastSelected = event.target.value;
+        console.log(roastSelected);
+        switch (roastSelected) {
+            case "light":
+                roastSelection = "light";
+                break;
+            case "house":
+                roastSelection = "house"
+                break;
+            case "bold":
+                roastSelection = "bold"
+                break;
+        }
+    });
+}
+
+const searchQuery = document.querySelector("#search")
+
+searchQuery.addEventListener('keyup', function(e){
+    let userInput = this.value.toLowerCase()
+    let matchingCoffees = []
+    for (let i = 0; i < coffees.length; i++) {
+        if(coffees[i].name.toLowerCase().startsWith(userInput)){
+            matchingCoffees.push(coffees[i])
+        }
+    }
+    divBody.innerHTML = renderCoffees(matchingCoffees)
+})
+
+// searchQuery.addEventListener("input", function(event){
+//     let searchString = this.value;
+//
+// })
+
+roastSelect();
 console.log(roastSelection);
 
 function renderCoffee(coffee) {
@@ -23,7 +62,7 @@ function renderCoffees(coffees) {
 
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
-    let selectedRoast = roastSelection.value;
+    let selectedRoast = roastSelection;
     console.log(selectedRoast)
     let filteredCoffees = [];
     coffees.forEach(function(coffee) {

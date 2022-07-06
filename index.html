@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Anteiku Coffee</title>
+    <link rel = "icon" href ="img/Tokyo%20Finest%20Coffee.png" type = "image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet"  href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css">
@@ -10,52 +11,33 @@
 <body>
 
 <div class="grid-container">
-    <div class="menu">
-        <form id="app-cover">
-            <div id="select-box">
-                <input type="checkbox" id="options-view-button">
-                <div id="select-button" class="brd">
-                    <div id="selected-value">
-                        <span>Pick a <strong>Roast</strong></span>
-                    </div>
-                    <div id="chevrons">
-                        <i class="fas fa-chevron-up"></i>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                </div>
-
-                <div id="options">
-
-                        <div class="option">
-                            <input class="s-c top" type="radio" name="platform" value="light">
-                            <input class="s-c bottom" type="radio" name="platform" value="light">
-                            <i class="fa fa-coffee"></i>
-                            <span class="label">Light</span>
-                            <span class="opt-val">Light</span>
-                        </div>
-                        <div class="option">
-                            <input class="s-c top" type="radio" name="platform" value="house">
-                            <input class="s-c bottom" type="radio" name="platform" value="house">
-                            <i class="fa fa-coffee"></i>
-                            <span class="label">House</span>
-                            <span class="opt-val">House</span>
-                        </div>
-                        <div class="option">
-                            <input class="s-c top" type="radio" name="platform" value="bold">
-                            <input class="s-c bottom" type="radio" name="platform" value="bold">
-                            <i class="fa fa-coffee"></i>
-                            <span class="label">Bold</span>
-                            <span class="opt-val">Bold</span>
-                        </div>
-
-                    <div id="option-bg"></div>
-                </div>
-            </div>
-            <div id="submit-button">
-                <button class="submit" role="button">SUBMIT</button>
-            </div>
-
-        </form>
+    <div class="menu" >
+        <details class="custom-select" >
+            <summary class="radios" id="roast-selection">
+                <input class="radio" type="radio" name="item" id="default" title="Select Your Roast" checked>
+                <input class="radio" type="radio" name="item" id="item1" title="Light" value="light">
+                <input class="radio" type="radio" name="item" id="item2" title="House" value="house">
+                <input type="radio" name="item" id="item3" title="Bold" value="bold">
+            </summary>
+            <ul class="list">
+                <li>
+                    <label for="item1">Light</label>
+                </li>
+                <li>
+                    <label for="item2">House</label>
+                </li>
+                <li>
+                    <label for="item3">Bold</label>
+                </li>
+            </ul>
+        </details>
+        <div class="formGroup" id="search-form">
+            <label for="search">Search</label>
+            <input type="text" id="search" name="search" />
+        </div>
+        <div id="submit-button">
+            <button class="submit" role="button">SUBMIT</button>
+        </div>
     </div>
 
     <div class="header">
@@ -63,7 +45,7 @@
             <img id="Logo" src="img/Tokyo%20Finest%20Coffee.png" alt="">
             <div class="nav-header">
                 <div class="nav-title">
-                    <h1>Heart Coffee</h1>
+                    <h1>Anteiku</h1>
                 </div>
             </div>
             <div class="nav-btn">
@@ -85,7 +67,6 @@
     <div class="main">
 
         <div id="coffees" class="grid-container2">
-            <div class="cards"></div>
             <div class="image">
                 <img class="coffee-cup" src="img/TokyoGhoulCoffee.gif" alt="water poured into coffee maker">
             </div>
