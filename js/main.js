@@ -1,7 +1,7 @@
 "use strict"
 const divBody = document.querySelector('#coffees');
 const submitButton = document.querySelector('#submit-button');
-
+const addSubmitButton = document.querySelector('#add-submit-button');
 let roastSelection = document.querySelector('#roast-selection');
 
 function roastSelect () {
@@ -55,15 +55,22 @@ function addSelect () {
 }
 addSelect();
 
-const addQuery = document.querySelector("#add");
 
-addQuery.addEventListener('input', function(event){
-    let addQueryListener = this.value.toLowerCase();
-    console.log(addQueryListener);
+function addACoffee(e) {
+    e.preventDefault(); // don't submit the form, we just want to update the data
+    let newCoffee = {
+        id: coffees.length + 1,
+        name: document.getElementById('add').value,
+        roast: addSelection.toString()
+    };
+    coffees.push(newCoffee);
+    updateCoffees(e);
+    document.getElementById("add").value = "";
+}
 
-})
 roastSelect();
 console.log(roastSelection);
+addSubmitButton.addEventListener('click', addACoffee);
 
 function renderCoffee(coffee) {
     let html = '<div class="cards">';
