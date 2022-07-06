@@ -145,7 +145,7 @@ p {
 
 details {
     position: relative;
-    width: 300px;
+    width: 80%;
     margin-right: 1rem;
 }
 
@@ -294,26 +294,47 @@ label span {
     border: 1px solid #727272;
     border-radius: 3px;
 }
-
 /* end select menu */
 
 /* Search Menu */
 #search-form {
     position: relative;
-    top: 30%;
+    top: 22%;
     color: #eee;
 }
 #search{
-    width: 300px;
+    width: 80%;
     height: 2rem;
     background-color: #E0C8A0;
     border-radius: 5px;
 }
+#search::placeholder {
+    font-family: "Concourse", sans-serif;
+    color: rgba(76, 44, 19,.7);
+    padding-left: 1em;
+}
+/* Add Menu */
+#add-form {
+    position: relative;
+    top: 30%;
+    color: #eee;
+}
+#add{
+    width: 80%;
+    height: 2rem;
+    background-color: #E0C8A0;
+    border-radius: 5px;
+}
+#add::placeholder {
+    font-family: "Concourse", sans-serif;
+    color: rgba(76, 44, 19,.7);
+    padding-left: 1em;
+}
 /* submit button */
 #submit-button{
     position: relative;
-    top: 300px;
-    left: 20px;
+    top: 25%;
+    left: 5%;
 }
 
 .submit,
@@ -417,9 +438,91 @@ label span {
 }
 /* end submit button */
 
+/* add menu */
+.list-choice{
+    width:80%;
+    position: relative;
+    top: 33%;
+    cursor: pointer;
+}
+.list-choice input[type="radio"]{
+    position:absolute;
+    left:-9999px;
+}
 
+.list-choice-title {
+    width: 100%;
+    display: block;
+    background: #E0C8A0;
+    text-align: left;
+    padding: 0.55em 1.2em;
+    box-sizing: border-box;
+    color: #4c2c13;
+    text-shadow: 0 1px 0 #CACACA;
+    border-radius: 0.2em;
+}
+.list-choice:hover .list-choice-title {
+    border-radius:0.2em 0.2em 0 0;
+}
+.list-choice-objects label:nth-last-of-type(1) span{
+    border-radius:0 0 0.2em 0.2em;
+}
+.list-choice input[type="radio"] + span {
+    color: #4c2c13;
+    background: #E0C8A0;
+    padding: 1.2em 1.2em;
+    display: block;
+    text-align: left;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 100%;
+}
+.list-choice-objects {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    padding-top: 1.8em;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: all 250ms ease;
+}
+.list-choice:hover .list-choice-objects  input[type="radio"] + span {
+    position: relative;
+    top: 0;
+    transition: all 250ms ease-in-out;
+}
+.list-choice:hover input[type="radio"] + span:hover {
+    background:#FFF8E8;
+}
+.list-choice:hover input[type="radio"]:checked + span:hover {
+    background:#95D8CD;
+}
+.list-choice input[type="radio"]:checked + span {
+    background: #95D8CD;
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    top: 0;
+    padding: 1.2em;
+    height: 1.4em;
+    border-radius: 0.2em;
+    z-index: -1;
+}
+.list-choice:hover input[type="radio"]:checked + span {
+    border-radius: 0;
+}
 
+.list-choice:hover .list-choice-objects label:nth-last-of-type(1) input[type="radio"]:checked + span{
+    border-radius:0 0 0.2em 0.2em;
+}
 
+.list-choice:hover .list-choice-objects {
+    max-height: 540px;
+}
 
 
 
@@ -527,8 +630,8 @@ label span {
 .grid-container2 {
     grid-auto-flow: row dense;
     display: grid;
-    grid-template-columns: 18% 18% 18% 18% 18%;
-    grid-template-rows: auto auto auto auto auto;
+    grid-template-columns: 23% 23% 23% 23%;
+    grid-template-rows: 20% 20% 20% 20%;
 
     justify-content: space-around;
     grid-gap: 3px;
@@ -537,14 +640,20 @@ label span {
     height: 98%;
 }
 .cards {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 236, 227, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 20px;
     font-size: 30px;
     height: 60px;
     border-radius: 5px;
+    opacity: 1;
+    animation: fadein 2s;
 }
 
+@keyframes fadein {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
 .coffee-cup {
 
     width: 620px;

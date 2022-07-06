@@ -28,7 +28,7 @@ searchQuery.addEventListener('keyup', function(e){
     let userInput = this.value.toLowerCase()
     let matchingCoffees = []
     for (let i = 0; i < coffees.length; i++) {
-        if(coffees[i].name.toLowerCase().startsWith(userInput)){
+        if(coffees[i].name.toLowerCase().indexOf(userInput) !== -1){
             matchingCoffees.push(coffees[i])
         }
     }
