@@ -22,11 +22,11 @@ function roastSelect () {
     });
 }
 
-const searchQuery = document.querySelector("#search")
+const searchQuery = document.querySelector("#search");
 
 searchQuery.addEventListener('keyup', function(e){
-    let userInput = this.value.toLowerCase()
-    let matchingCoffees = []
+    let userInput = this.value.toLowerCase();
+    let matchingCoffees = [];
     for (let i = 0; i < coffees.length; i++) {
         if(coffees[i].name.toLowerCase().indexOf(userInput) !== -1){
             matchingCoffees.push(coffees[i])
@@ -34,8 +34,34 @@ searchQuery.addEventListener('keyup', function(e){
     }
     divBody.innerHTML = renderCoffees(matchingCoffees)
 })
+let addSelection = document.querySelector('#add-roast');
 
+function addSelect () {
+    addSelection.addEventListener("change", function(event){
+        let addSelected = event.target.value;
+        console.log(addSelected);
+        switch (addSelected) {
+            case "light":
+                addSelection = "light";
+                break;
+            case "house":
+                addSelection = "house"
+                break;
+            case "bold":
+                addSelection = "bold"
+                break;
+        }
+    });
+}
+addSelect();
 
+const addQuery = document.querySelector("#add");
+
+addQuery.addEventListener('input', function(event){
+    let addQueryListener = this.value.toLowerCase();
+    console.log(addQueryListener);
+
+})
 roastSelect();
 console.log(roastSelection);
 

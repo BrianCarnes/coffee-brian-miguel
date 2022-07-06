@@ -460,6 +460,7 @@ label span {
     color: #4c2c13;
     text-shadow: 0 1px 0 #CACACA;
     border-radius: 0.2em;
+
 }
 .list-choice:hover .list-choice-title {
     border-radius:0.2em 0.2em 0 0;
@@ -479,13 +480,11 @@ label span {
 }
 .list-choice-objects {
     position: absolute;
-    display: flex;
-    justify-content: center;
     top: 0;
     padding-top: 1.8em;
     box-sizing: border-box;
     width: 100%;
-    overflow: hidden;
+    overflow: auto;
     max-height: 0;
     transition: all 250ms ease;
 }
@@ -501,7 +500,7 @@ label span {
     background:#95D8CD;
 }
 .list-choice input[type="radio"]:checked + span {
-    background: #95D8CD;
+    background: #E0C8A0;
     position: absolute;
     display: flex;
     justify-content: flex-start;
@@ -510,7 +509,7 @@ label span {
     padding: 1.2em;
     height: 1.4em;
     border-radius: 0.2em;
-    z-index: -1;
+    z-index: 1;
 }
 .list-choice:hover input[type="radio"]:checked + span {
     border-radius: 0;
