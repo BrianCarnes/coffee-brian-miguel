@@ -34,6 +34,7 @@ searchQuery.addEventListener('keyup', function(e){
     }
     divBody.innerHTML = renderCoffees(matchingCoffees)
 })
+
 let addSelection = document.querySelector('#add-roast');
 
 function addSelect () {
@@ -64,7 +65,8 @@ function addACoffee(e) {
         roast: addSelection.toString()
     };
     coffees.push(newCoffee);
-    updateCoffees(e);
+    updateCoffees(e)
+    divBody.innerHTML = renderCoffees(coffees);
     document.getElementById("add").value = "";
 }
 
@@ -85,6 +87,12 @@ function renderCoffees(coffees) {
     let html = '';
     for(let i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
+        if (i === 5) {
+            html += "<div class=\"image\"> <img class=\"coffee-cup\" src=\"img/TokyoGhoulCoffee.gif\" alt=\"water poured into coffee maker\"> </div>"
+        }
+    }
+    if (coffees.length <= 5) {
+        html += "<div class=\"image\"> <img class=\"coffee-cup\" src=\"img/TokyoGhoulCoffee.gif\" alt=\"water poured into coffee maker\"> </div>"
     }
     return html;
 }
@@ -99,6 +107,7 @@ function updateCoffees(e) {
             filteredCoffees.push(coffee);
         }
     });
+    filteredCoffees.reverse();
     divBody.innerHTML = renderCoffees(filteredCoffees);
 }
 
@@ -117,7 +126,7 @@ let coffees = [
     {id: 12, name: 'Viennese', roast: 'bold'},
     {id: 13, name: 'Italian', roast: 'bold'},
     {id: 14, name: 'French', roast: 'bold'},
-];
+].reverse();
 
 divBody.innerHTML = renderCoffees(coffees);
 
